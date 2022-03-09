@@ -1,0 +1,24 @@
+{
+  "name": "cat-searching-website",
+  "version": "1.0.0",
+  "description": "프로그래머스 과제 연습",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint src/**/*.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoyoungmoon/cat-searching-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hoyoungmoon/cat-searching-website/issues"
+  },
+  "homepage": "https://github.com/hoyoungmoon/cat-searching-website#readme",
+  "devDependencies": {
+    "eslint": "^8.10.0"
+  }
+}
