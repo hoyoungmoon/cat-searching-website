@@ -4,6 +4,23 @@
   box-sizing: inherit;
 }
 
+/* 전역 css 변수 */
+:root {
+  --color-dark: black;
+  --color-light: white;
+  --background: white;
+  --text-color: black;
+}
+
+body[data-theme="light"] {
+  background-color: var(--color-light);
+  color: var(--color-dark);
+}
+body[data-theme="dark"] {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+}
+
 .SearchResult {
   display: grid;
   grid-template-columns: repeat(4, minmax(250px, 1fr));
@@ -61,5 +78,13 @@
 @media (max-width: 576px) {
   .SearchResult {
     grid-template-columns: repeat(1, minmax(250px, 1fr));
+  }
+}
+
+/* default dark mode */
+@media (prefer-color-scheme: dark) {
+  body {
+    background-color: var(--color-dark);
+    color: var(--color-light);
   }
 }

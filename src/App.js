@@ -4,6 +4,10 @@ class App {
   constructor($target) {
     this.$target = $target;
 
+    new ThemeToggle({
+      $target,
+    });
+
     this.searchInput = new SearchInput({
       $target,
       onSearch: async (keyword) => {
