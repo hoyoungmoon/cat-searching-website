@@ -11,8 +11,9 @@ class App {
     this.searchInput = new SearchInput({
       $target,
       onSearch: async (keyword) => {
+        this.setState({ loading: true, data: [] });
         const cats = await api.fetchCats(keyword);
-        this.setState(cats);
+        this.setState({ loading: false, data: cats });
       },
     });
 
@@ -41,8 +42,8 @@ class App {
     });
   }
 
-  setState(data) {
+  setState({ loading, data }) {
     this.data = data;
-    this.searchResult.setState(data);
+    this.searchResult.setState({ loading, data });
   }
 }
