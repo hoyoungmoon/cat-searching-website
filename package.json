@@ -4,7 +4,7 @@
   "description": "프로그래머스 과제 연습",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint src/**/*.js",
+    "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

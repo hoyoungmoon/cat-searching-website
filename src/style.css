@@ -1,0 +1,49 @@
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.SearchResult {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(250px, 1fr));
+}
+
+.SearchResult img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ImageInfo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.ImageInfo .content-wrapper {
+  position: static;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: white;
+}
+
+.ImageInfo .title {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.ImageInfo img {
+  width: 300px;
+}
