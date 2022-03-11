@@ -25,17 +25,35 @@ class SearchResult {
   }
 
   render() {
-    this.$searchResult.innerHTML = this.data
-      .map(({ url, breeds }) => {
-        const name = breeds[0]?.name;
-        return `
-            <div class="item">
-                <img src=${url} alt=${name}/>
-            </div>
-        `;
-      })
-      .join("");
+    this.data.forEach(({ url }) => {
+      const cardContainer = document.createElement("div");
+      cardContainer.classList.add("item");
 
+      const card = document.createElement("img");
+      card.classList.add("lazy");
+      card.dataset.url = url;
+
+      cardContainer.appendChild(card);
+      this.$searchResult.appendChild(cardContainer);
+    });
+
+    const lazyImageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const lazyImage = entry.target;
+          lazyImage.src = lazyImage.dataset.url;
+          lazyImage.classList.remove("lazy");
+          observer.unobserve(lazyImage);
+        }
+      });
+    });
+
+    const lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+    lazyImages.forEach((image) => {
+      lazyImageObserver.observe(image);
+    });
+
+    // search indicator
     this.$indicator.innerText = this.loading
       ? "검색 중 입니다..."
       : this.data.length

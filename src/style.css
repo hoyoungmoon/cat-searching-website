@@ -42,6 +42,13 @@ body[data-theme="dark"] {
   object-fit: cover;
 }
 
+.SearchResult .item {
+  height: 200px;
+}
+
+.lazy {
+  display: "none";
+}
 .ImageInfo {
   position: fixed;
   top: 0;
