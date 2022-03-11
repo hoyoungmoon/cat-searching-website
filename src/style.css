@@ -13,6 +13,8 @@
 }
 
 #App {
+  display: flex;
+  flex-direction: column;
   margin: 1.5em auto;
   max-width: 1200px;
 }
@@ -28,6 +30,12 @@ body[data-theme="dark"] {
   color: var(--color-light);
   --background: var(--color-dark);
   --text-color: var(--color-light);
+}
+
+.column-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .SearchResult {
@@ -49,6 +57,7 @@ body[data-theme="dark"] {
 .lazy {
   display: "none";
 }
+
 .ImageInfo {
   position: fixed;
   top: 0;
@@ -59,6 +68,23 @@ body[data-theme="dark"] {
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+.RecentSearch {
+  display: flex;
+  flex-direction: row;
+}
+
+.RecentSearch .keyword-badge {
+  border: 1px solid var(--text-color);
+  border-radius: 5px;
+  padding: 5px;
+  min-width: 30px;
+  margin-right: 5px;
+}
+
+.RecentSearch .delete-badge {
+  margin-left: 10px;
 }
 
 .ImageInfo .content-wrapper {

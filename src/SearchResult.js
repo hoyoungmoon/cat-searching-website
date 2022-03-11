@@ -25,6 +25,7 @@ class SearchResult {
   }
 
   render() {
+    this.$searchResult.innerHTML = "";
     this.data.forEach(({ url }) => {
       const cardContainer = document.createElement("div");
       cardContainer.classList.add("item");
